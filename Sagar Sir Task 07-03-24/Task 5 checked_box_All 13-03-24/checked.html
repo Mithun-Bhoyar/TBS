@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form  name="myform">
+        
+        <!-- <input type="checkbox" name="list" onclick="check(this.form.list)">all check box<br> -->
+        <input type="checkbox" name="list" onclick="check(document.myform.list)">all check box<br>
+        <input type="checkbox" name="list" value="1">book<br>
+        <input type="checkbox" name="list" value="2">pen<br>
+        <input type="checkbox" name="list" value="3">bag<br>
+        <input type="checkbox" name="list" value="4">bottle<br>
+        <input type="checkbox" name="list" value="5">shoes<br>
+
+    </form>
+
+    <script>
+        var checkflag ="false";
+        function check(field) {
+            //console.log(field);
+            if (checkflag =="false") {
+                for ( let i = 0; i < field.length; i++) {
+                    field[i].checked = true;
+                }
+                checkflag = "true";
+                //return "uncheck All";
+            } 
+            else{
+            for ( let i = 0; i < field.length; i++) {
+                    field[i].checked = false;
+                }
+                checkflag ="false";
+                //return "check All";
+            }
+        }
+    </script>
+    
+</body>
+</html>

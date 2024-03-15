@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide and show</title>
+    <style>
+        .hidden {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="togglevisibility()">content</button>
+
+    <div id="content" class="hidden">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quas dolorum laudantium omnis accusantium
+        voluptatibus ipsa minima ullam soluta illo? Sequi impedit eligendi libero ducimus! Natus ea odit quos minima?
+    </div>
+    <script>
+        function togglevisibility() {
+            //console.log("togglevisibility")return false;
+            var content = document.getElementById("content")
+
+            if (content.classList.contains("hidden")) {
+                content.classList.remove("hidden");
+            }
+            else {
+                content.classList.add("hidden");
+            }
+        }
+    </script>
+
+    <!-- <script>
+            function togglevisibility(){
+                var content =document.getElementById("content")
+                content.classList.toggle("hidden")
+
+            }
+    </script> -->
+
+</body>
+
+</html>

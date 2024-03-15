@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Validations</title>
+    <link rel="stylesheet" href="assets/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0; /* Set a background color for the entire page */
+            font-family: Arial, sans-serif; /* Choose a font for better readability */
+        }
+    
+        form {
+            background-color: #fff; /* Set a background color for the form */
+            max-width: 600px; /* Adjust the maximum width of the form */
+            margin: 20px auto; /* Center the form horizontally with some margin */
+            padding: 20px; /* Add some padding to the form */
+            border-radius: 10px; /* Add rounded corners to the form */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+        }
+    
+        table {
+            width: 100%;
+        }
+    
+        td {
+            padding: 10px;
+        }
+    
+        input[type="text"],
+        textarea,
+        select,
+        input[type="file"] {
+            width: 100%; /* Make form controls take up full width */
+            padding: 8px; /* Add some padding to form controls */
+            margin-bottom: 10px; /* Add spacing between form controls */
+            box-sizing: border-box; /* Include padding and border in width calculation */
+        }
+    
+        button {
+            background-color: #4caf50; /* Set a green background color for the submit button */
+            color: #fff; /* Set white text color for the submit button */
+            padding: 10px 20px; /* Add padding to the submit button */
+            border: none; /* Remove button border */
+            border-radius: 5px; /* Add rounded corners to the submit button */
+            cursor: pointer; /* Add a pointer cursor to the submit button */
+        }
+    
+        button:hover {
+            background-color: #45a049; /* Darker green color on button hover */
+        }
+    </style>
+    
+</head>
+<body>
+    <form style="text-align: center;" name="myform" method="post" enctype="multipart/form-data" onsubmit="return validate_form()">
+        <table  border='1' cellpadding='10px' cellspacing='0px' aligm='center' width='900px'>
+            <tr>
+                <td width="200px"><label>Name : </label></td>
+                <td width="300px"><input type="text" name="name" autocomplete="off"></td>
+                <td width="400px"><div id="errname"></div></td>
+            </tr>
+            <tr>
+                <td width="200px"><label>Email : </label></td>
+                <td width="300px"><input type="text" name="email" autocomplete="off"></td>
+                <td width="400px"><div id="erremail"></div></td>
+            </tr>
+            <tr>
+                <td width="200px"><label>Mobile : </label></td>
+                <td width="300px"><input type="text" name="mobile" autocomplete="off"></td>
+                <td width="400px"><div id="errmobile"></div></td>
+            </tr>
+            <tr>
+                <td ><label>Address : </label></td>
+                <td ><textarea name="address" id="" cols="30" rows="5" autocomplete="off"></textarea></td>
+                <td ><div id="erraddress"></div></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <label for="male"><input type="radio" name="gender"  id="male" value="male" >Male</label>
+                    <label for="female"><input type="radio" name="gender"  id="female" value="female" >Female</label>
+                </td>
+                <td><div id="errgender"></div></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <select class="form-control" name="city">
+                        <option value="">-- Select City --</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                    </select>
+                    <td><div id="errcity"></div></td>
+                </td>
+            </tr>
+            <tr>
+                <td>Photo</td>
+                <td>
+                   <input type="file" class="form-control" name="photo" />
+                </td>
+                <td><div id="errphoto"></div></td>
+            </tr>
+        </table>
+        <br>
+        <button type="submit" style="text-align: center;">Submit</button>
+    </form>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

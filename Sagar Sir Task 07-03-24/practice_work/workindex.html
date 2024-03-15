@@ -1,0 +1,198 @@
+<button type="buttton" onclick="myalert();">Alert</button>
+<br><br>
+
+<button type="buttton" onclick="myconfirm();">Confirm</button><span id="conn"></span>
+<br><br>
+<button type="buttton" onclick="myprompt();">prompt</button><span id="pro"></span>
+<br><br>
+<button type="buttton" onclick="myparameterfunction('sagar','BE',20000);">myparameterfunction</button><span id="details"></span>
+<br><br>
+
+<input type="text" id="first_val">
+<input type="text" id="second_val" readonly="true">
+<input type="text" id="Third_val" readonly="true">
+
+<button type="button" onmouseover="return getval1()">Get value</button><br>
+
+<input type="text" id="four_val" onblur="document.getElementById('five_val').value = document.getElementById('four_val').value">
+<input type="text" id="five_val" readonly="true" >
+<br><br>
+    <input type="text" id="six_val" onblur="getval3()">
+    <input type="text" id="seven_val" readonly="true" >
+
+    <br><br> <br/><br>
+    <input type="text" id="v1" size="3"/>
+    <span id="operator"></span>
+    <input type="text" id="v2" size="3"/>
+    <span id="result"> </span><br><br>
+    <button type="button" onclick="return getvals('+')">+</button>
+    <button type="button" onclick="return getvals('-')">-</button>
+    <button type="button" onclick="return getvals('*')">*</button>
+    <button type="button" onclick="return getvals('/')">/</button>
+    <button type="button" onclick="return getvals('%')">%</button>
+    <button type="button" onclick="return getvals('c')">C</button>
+    <script src="assets/js/main.js"></script>
+
+
+
+
+ TAsk 2
+
+
+
+
+
+    <form style="text-align: center;" name="myform" method="post" enctype="multipart/form-data" onsubmit="return validate_form()">
+        <table  border='1' cellpadding='10px' cellspacing='0px' aligm='center' width='900px'>
+            <tr>
+                <td width="200px"><label>Name : </label></td>
+                <td width="300px"><input type="text" name="name" autocomplete="off"></td>
+                <td width="400px"><div id="errname"></div></td>
+            </tr>
+            <tr>
+                <td width="200px"><label>Email : </label></td>
+                <td width="300px"><input type="text" name="email" autocomplete="off"></td>
+                <td width="400px"><div id="erremail"></div></td>
+            </tr>
+            <tr>
+                <td width="200px"><label>Mobile : </label></td>
+                <td width="300px"><input type="text" name="mobile" autocomplete="off"></td>
+                <td width="400px"><div id="errmobile"></div></td>
+            </tr>
+            <tr>
+                <td ><label>Address : </label></td>
+                <td ><textarea name="address" id="" cols="30" rows="5" autocomplete="off"></textarea></td>
+                <td ><div id="erraddress"></div></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <label for="male"><input type="radio" name="gender"  id="male" value="male" >Male</label>
+                    <label for="female"><input type="radio" name="gender"  id="female" value="female" >Female</label>
+                </td>
+                <td><div id="errgender"></div></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <select class="form-control" name="city">
+                        <option value="">-- Select City --</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                    </select>
+                    <td><div id="errcity"></div></td>
+                </td>
+            </tr>
+            <tr>
+                <td>Photo</td>
+                <td>
+                   <input type="file" class="form-control" name="photo" />
+                </td>
+                <td><div id="errphoto"></div></td>
+            </tr>
+        </table>
+        <br>
+        <button type="submit" style="text-align: center;">Submit</button>
+    </form>
+
+
+    Task 3
+
+
+
+    <body>
+        <input type="text" id="v1" onkeyup="getdata('1')">
+        <input type="text" id="v2" onkeyup="getdata('2')">
+        <input type="text" id="v3" onkeyup="getdata('3')">
+        <input type="text" id="v4" onkeyup="getdata('4')">
+        <input type="text" id="v5" onkeyup="getdata('5')">
+        <input type="text" id="v6" onkeyup="getdata('6')">
+        <input type="text" id="v7" onkeyup="getdata('7')">
+        <input type="text" id="v8" onkeyup="getdata('8')">
+        <input type="text" id="v9" onkeyup="getdata('9')">
+        <input type="text" id="v10" onkeyup="getdata('10')">
+        <input type="text" id="v11" onkeyup="getdata('11')">
+        <input type="text" id="v12" onkeyup="getdata('12')">
+        Total:<input type="text" id="total" readonly="true">
+        Average:<input type="text" id="avg" readonly="true">
+        Percentage:<input type="text" id="average" readonly="true">
+    
+        <script>
+            var total = 0;// declaring total as gobal variable
+    
+            function getdata(params){
+                //alert(params)
+                for ( params; params < 12; params++){
+                    //code block to be executed
+                    
+                    var date = parseInt(params) + 1;
+    
+                    document.getElementById('v'+ date).value = document.getElementById('v'+ params).value;
+                }
+            calculateTotal();
+    
+    
+             calculateavg();
+            } 
+    
+            function calculateTotal() {
+             total = 0;
+                for (var i = 1; i <= 12; i++) {
+                    // total += parseInt(document.getElementById('v' + i).value) || 0;
+                    total = total + (parseInt(document.getElementById('v' + i).value) || 0);
+    
+                }
+    
+                document.getElementById('total').value = total;
+                //var average = parsefloat(total/12);
+                //document.getElementById('avg').value=average;
+            }
+    
+            function calculateavg() {
+    
+                var average = parseFloat(total/12);
+                document.getElementById('avg').value=average;
+             }
+    
+            
+        </script>
+
+
+
+   Task 4
+
+
+
+<form  name="myform">
+        
+    <input type="checkbox" name="list" onclick="check(this.form.list)">all check box<br>
+    <input type="checkbox" name="list" value="1">book<br>
+    <input type="checkbox" name="list" value="2">pen<br>
+    <input type="checkbox" name="list" value="3">bag<br>
+    <input type="checkbox" name="list" value="4">bottle<br>
+    <input type="checkbox" name="list" value="5">shoes<br>
+
+</form>
+
+<script>
+    var checkflag ="false";
+    function check(field) {
+        console.log(field);
+        if (checkflag =="false") {
+            for ( let i = 0; i < field.length; i++) {
+                field[i].checked = true;
+            }
+            checkflag = "true";
+            //return "uncheck All";
+        } 
+        else{
+        for ( let i = 0; i < field.length; i++) {
+                field[i].checked = false;
+            }
+            checkflag ="false";
+            //return "check All";
+        }
+    }
+ </script>
+    

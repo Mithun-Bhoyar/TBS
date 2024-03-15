@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK</title>
+</head>
+<body>
+    <button type="buttton" onclick="myalert();">Alert</button>
+    <br><br>
+    
+    <button type="buttton" onclick="myconfirm();">Confirm</button><span id="conn"></span>
+   <br><br>
+    <button type="buttton" onclick="myprompt();">prompt</button><span id="pro"></span>
+    <br><br>
+    <button type="buttton" onclick="myparameterfunction('sagar','BE',20000);">myparameterfunction</button><span id="details"></span>
+    <br><br>
+
+    <input type="text" id="first_val">
+    <input type="text" id="second_val" readonly="true">
+    <input type="text" id="Third_val" readonly="true">
+    
+    <button type="button" onmouseover="return getval1()">Get value</button><br>
+
+    <input type="text" id="four_val" onblur="document.getElementById('five_val').value = document.getElementById('four_val').value">
+    <input type="text" id="five_val" readonly="true" >
+
+
+    <!----  OR-->
+    <!-- <input type="text" id="four_val" onblur="document.getElementById('five_val').value = this.value">
+    <input type="text" id="five_val" readonly="true" > -->
+    <!-----OR-->
+    <!-- <input type="text" id="four_val" onblur="getval2()">
+    <input type="text" id="five_val" readonly="true" > -->
+
+    <br><br>
+    <input type="text" id="six_val" onblur="getval3()">
+    <input type="text" id="seven_val" readonly="true" >
+
+    <br><br> <br/><br>
+    <input type="text" id="v1" size="3"/>
+    <span id="operator"></span>
+    <input type="text" id="v2" size="3"/>
+    <span id="result"> </span><br><br>
+    <button type="button" onclick="return getvals('+')">+</button>
+    <button type="button" onclick="return getvals('-')">-</button>
+    <button type="button" onclick="return getvals('*')">*</button>
+    <button type="button" onclick="return getvals('/')">/</button>
+    <button type="button" onclick="return getvals('%')">%</button>
+    <button type="button" onclick="return getvals('c')">C</button>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
